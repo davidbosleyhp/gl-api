@@ -1,4 +1,4 @@
-namespace gl_api.test;
+namespace gl_apiTests;
 using gl_api.Data;
 
 public class SiteDataTests
