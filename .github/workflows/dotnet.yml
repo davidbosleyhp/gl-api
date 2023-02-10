@@ -28,13 +28,13 @@ jobs:
       working-directory: gl-api
     - name: Restore test
       run: dotnet restore
-      working-directory: gl-api.test
+      working-directory: gl-apiTests
     - name: Build test
       run: dotnet build --no-restore
-      working-directory: gl-api.test 
+      working-directory: gl-apiTests
     - name: Test
       run: dotnet test --no-build --verbosity normal
-      working-directory: gl-api.test   
+      working-directory: gl-apiTests
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
       with:
