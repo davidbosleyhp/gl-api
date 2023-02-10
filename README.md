@@ -17,7 +17,10 @@ The page will reload if you make edits.\
 
 In the \gl-api.test folder you can run
 
-### `dotnet test`
+### `.\runtests `
 
-Launches the test runner.\
+runs dotnet test with appropriate parameters to gather code coverag information
 
+### `.\seecoverage`
+
+Launches the local code coverage report from the .\runtests command. You can also save a link in your browser to <repo-location>/gl-apiTests/TestCodeCoverage/index.html
