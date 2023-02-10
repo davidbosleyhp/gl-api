@@ -38,7 +38,7 @@ jobs:
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
       with:
-        token: dfe8e904-4abc-4484-a75d-de3b860c21ba # not required for public repos
+        token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
         #files: ./coverage1.xml,./coverage2.xml # optional
         flags: unittests # optional
         name: codecov-gl-api # optional
