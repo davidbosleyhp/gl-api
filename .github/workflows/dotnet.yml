@@ -5,7 +5,7 @@ name: build-gl-api
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "*" ]
   pull_request:
     branches: [ "main" ]
 
