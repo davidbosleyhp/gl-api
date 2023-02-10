@@ -22,6 +22,7 @@ bld/
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
+[Tt]est[Cc]ode[Cc]overage*/
 [Bb]uild[Ll]og.*
 
 # SonarQube

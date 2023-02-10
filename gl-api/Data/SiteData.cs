@@ -4,6 +4,7 @@ namespace gl_api.Data
         List<Site> GetSites();
     }
 
+    // Placeholder for site repo
     public class SiteData : ISiteData{
         public  List<Site> GetSites()
         {
