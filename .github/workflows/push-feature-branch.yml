@@ -1,0 +1,9 @@
+name: push-feature-branch
+
+on:
+  push:
+    branches: [ "*", "!main" ]
+
+jobs:
+  build-test-runcodecoverage:
+    uses: ./.github/workflows/build-test-codecov.yml
