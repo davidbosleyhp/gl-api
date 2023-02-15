@@ -17,11 +17,13 @@ namespace gl_api.Controllers
         }
 
         [HttpGet(Name = "GetSites")]
-        public async Task<ActionResult< IEnumerable<Site>>> Get()
+        public async Task<ActionResult<IEnumerable<Site>>> Get()
         {
             // will eventually await repo call
-            return _siteData.GetSites()
-            .ToArray();
+
+            var sites = _siteData.GetSites().ToArray();
+            _logger.LogInformation($"GetSites returning {sites.Length} sites");
+            return sites;
         }
     }
 }

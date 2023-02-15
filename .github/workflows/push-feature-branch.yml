@@ -1,0 +1,7 @@
+name: push-feature-branch
+
+on:
+  push:
+    branches: [ "*", "!main" ]
+
+jobs:
