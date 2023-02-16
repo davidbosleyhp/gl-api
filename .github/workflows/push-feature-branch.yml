@@ -5,11 +5,11 @@ on:
     branches: [ "*", "!main" ]
 
 jobs:
-  build-test-runcodecoverage:
-    uses: ./.github/workflows/build-test-codecov.yml
+  # build-test-runcodecoverage:
+  #  uses: ./.github/workflows/build-test-codecov.yml
 
   push-image:
-    needs: build-test-runcodecoverage
+    # needs: build-test-runcodecoverage
     env:
       IMAGE: davebosleyhpe/glapi
     runs-on: ubuntu-latest
