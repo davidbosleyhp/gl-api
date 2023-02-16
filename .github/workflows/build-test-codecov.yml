@@ -33,6 +33,7 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal --collect:"XPlat Code Coverage"
       working-directory: gl-apiTests
+      # Why does this fail sometimes?
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
       with:
