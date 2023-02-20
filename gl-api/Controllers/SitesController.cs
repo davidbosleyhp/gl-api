@@ -4,7 +4,7 @@ using gl_api.Data;
 namespace gl_api.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class SitesController : ControllerBase
     {
         private readonly ILogger<SitesController> _logger;
