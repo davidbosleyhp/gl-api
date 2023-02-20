@@ -22,6 +22,7 @@ builder.Host.ConfigureAppConfiguration(builder =>
 
 builder.Logging.AddConsole();
 
+
 // builder.Logging.AddJsonConsole(options =>
 // {
 //     options.IncludeScopes = false;
@@ -34,6 +35,8 @@ builder.Logging.AddConsole();
 //         Indented = false
 //     };
 // });
+
+
 
 
 // Add services to the container.
@@ -65,6 +68,7 @@ var app = builder.Build();
 // {
 app.UseSwagger();
 app.UseSwaggerUI();
+
 
 //}
 
