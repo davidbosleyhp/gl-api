@@ -100,8 +100,6 @@ namespace gl_api.Controllers
         }
 
 
-
-
         private bool IsValidSite(Site site)
         {
             return !string.IsNullOrWhiteSpace(site.Name?.Trim());
