@@ -2,17 +2,23 @@ namespace gl_api.Data
 {
     public interface ISiteData
     {
+        Site AddSite(Site site);
+        void DeleteSite(int id);
+        Site? GetSite(int id);
         List<Site> GetSites();
+        void UpdateSite(Site site);
     }
 
     // Placeholder for site repo
     public class SiteData : ISiteData
     {
-        public List<Site> GetSites()
-        {
-            var sites = new List<Site>();
+        static List<Site> _sites = new List<Site>();
 
-            sites.Add(
+        private int _nextId = 4;
+
+        static SiteData()
+        {
+             _sites.Add(
                 new Site("Cleveland")
                 {
                     Id = 1,
@@ -20,7 +26,7 @@ namespace gl_api.Data
                     SeismicZone = 0
                 }
             );
-            sites.Add(
+            _sites.Add(
                 new Site("Sacramento")
                 {
                     Id = 2,
@@ -28,7 +34,7 @@ namespace gl_api.Data
                     SeismicZone = 2
                 }
             );
-            sites.Add(
+            _sites.Add(
                 new Site("San Andreas")
                 {
                     Id = 3,
@@ -37,7 +43,47 @@ namespace gl_api.Data
                 }
             );
 
-            return sites;
+        }
+
+        public Site AddSite(Site site)
+        {
+            site.Id = _nextId;
+            _nextId++;  
+            _sites.Add(site);          
+            return site;
+        }
+
+        public void DeleteSite(int id)
+        {
+             var currentSite = _sites.FirstOrDefault(x=>x.Id == id);
+
+            if (currentSite != null)
+            {
+                _sites.Remove(currentSite);
+            }
+        }
+
+        public Site? GetSite(int id)
+        {
+
+            return _sites.FirstOrDefault(x=>x.Id == id);
+        }
+
+        public List<Site> GetSites()
+        {            
+
+            return _sites;
+        }
+
+        public void UpdateSite(Site site)
+        {
+            var currentSite = _sites.FirstOrDefault(x=>x.Id == site.Id);
+
+            if (currentSite != null)
+            {
+                _sites.Remove(currentSite);
+                _sites.Add(site);
+            }
         }
     }
 }
